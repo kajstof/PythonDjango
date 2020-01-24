@@ -3,4 +3,8 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse('We are at index function we created')
+    return render(request, 'utilities/index.html')
+
+
+def processed(request):
+    return HttpResponse('We are at processed function we created')
