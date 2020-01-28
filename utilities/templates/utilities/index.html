@@ -26,7 +26,7 @@
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Process Text</a>
         </li>
         <li class="nav-item dropdown">
@@ -43,7 +43,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
+        </li> -->
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -53,11 +53,13 @@
   </nav>
   <div class='container'>
     <h1>Enter the text to capitalize</h1>
-    <form>
+    <form action="/process" method="POST">
+      {% csrf_token %}
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="text">Example textarea</label>
+        <textarea class="form-control" id="text" name="text" rows="3"></textarea>
       </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 
